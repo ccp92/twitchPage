@@ -27,3 +27,10 @@ function getTwitch() {
 };
 
 getTwitch();
+
+function buttonTwitch() {
+    var search = document.getElementById('#streamer');
+    console.log(search);
+};
+
+$('#submit').click(buttonTwitch());
