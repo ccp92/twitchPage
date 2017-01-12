@@ -4,12 +4,12 @@
 		<title>Twitch API Project</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!--Bootstrap-->
-        <link rel="stylesheet" href="/twitch.css">
+        <link rel="stylesheet" href="twitch.css">
         <!--Local CSS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<!--jQuery-->
-        <script src="/twitch.js"></script>
+        <script src="twitch.js"></script>
 	</head>
 	<body>
 		<h1>Twitch API Project</h1>
@@ -23,11 +23,15 @@
                     <input type="text" placeholder="Streamer">
                     <button class="btn btn-default">Submit</button>
                 </td>
-                <td>Status Unknown</td>
+                <td id="status">Status Unknown</td>
+            </tr>
+            <tr>
+                <td>ESL SC2</td>
+                <td id="sc-status">Offline</td>
             </tr>
 			<tr>
 				<td>A_Seagull</td>
-				<td>Offline</td>
+				<td id="seagull-status">Offline</td>
 			</tr>
 		</table>
 	</body>
