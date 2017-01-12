@@ -29,8 +29,17 @@ function getTwitch() {
 getTwitch();
 
 function buttonTwitch() {
-    var search = document.getElementById('#streamer');
+    var search = document.getElementById('streamer').value;
     console.log(search);
+    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/'+search+'/?callback=?', function(info) {
+        var status;
+        if (info.stream===null) {
+            status = 'Offline';
+        } else if (info.stream===undefined) {
+            status = 'Dead';
+        } else {
+            status = 'Online';
+        }
+        $('#status').text(status);
+    })
 };
-
-$('#submit').click(buttonTwitch());
