@@ -1,5 +1,5 @@
 function getTwitch() {	
-    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/esl_sc2/?callback=?', function (info) {
+    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/esl_sc2', function (info) {
         var statusSc;
         if (info.stream === null) {
             statusSc = 'Offline';
@@ -8,8 +8,16 @@ function getTwitch() {
         } else {
             statusSc = 'Online';
         }
+        
+        console.log('ESL_SC2: ' + statusSc);
+        if (statusSc === 'Online') {
+            gameSc = info.stream['game'];
+        } else {
+            gameSc = 'n/a';
+        }
+        
         $('#sc-status').text(statusSc);
-        console.log(statusSc);
+        $('#sc-game').text(gameSc);
     })
     
     $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/a_seagull/?callback=?', function (info) {
@@ -21,8 +29,14 @@ function getTwitch() {
         } else {
             statusSeagull = 'Online';
         }
+        console.log('A_Seagull: '+statusSeagull);
+        if (statusSeagull === 'Online') {
+            gameSeagull = info.stream['game'];
+        } else {
+            gameSeagull = 'n/a';
+        }
         $('#seagull-status').text(statusSeagull);
-        console.log(statusSeagull);
+        $('#seagull-game').text(gameSeagull);
     })
 };
 
@@ -40,6 +54,12 @@ function buttonTwitch() {
         } else {
             status = 'Online';
         }
+        if (status === 'Online') {
+            game = info.stream['game'];
+        } else {
+            game = 'n/a';
+        }
         $('#status').text(status);
+        $('#game').text(game);
     })
 };
