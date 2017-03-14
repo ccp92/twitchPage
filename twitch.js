@@ -1,5 +1,5 @@
 function getTwitch() {
-    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/esl_sc2', function (info) {
+    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/esl_sc2/?callback=?', function (info) {
         var statusSc;
         var gameSc = 'n/a';
 		var previewSc;
@@ -22,7 +22,7 @@ function getTwitch() {
         console.log(infoSc);
     })
     
-    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/a_seagull', function (info) {
+    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/a_seagull/?callback=?', function (info) {
         var statusSeagull;
         var gameSeagull = 'n/a';
 		var previewSeagull;
@@ -49,7 +49,7 @@ getTwitch();
 function buttonTwitch() {
     var search = document.getElementById('streamer').value;
     console.log(search);
-    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/'+search, function(info) {
+    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/'+search+'/?callback=?', function(info) {
         var status;
         var game = 'n/a';
         if (info.stream===null) {
