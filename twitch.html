@@ -6,7 +6,7 @@
 		<!--Bootstrap-->
         <link rel="stylesheet" href="twitch.css">
         <!--Local CSS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<!--jQuery-->
         <script src="twitch.js"></script>
@@ -15,7 +15,7 @@
         <div class="top">
             <h1>Twitch API Project</h1>
         </div>
-		<table class="table">
+		<table class="table" id="users-table">
 			<tr>
                 <th>Streamer</th>
                 <th>Status</th>
@@ -32,13 +32,15 @@
                 <td><img id="preview" src=""/></td>
             </tr>
             <tr>
-				<td><a href="https://twitch.tv/ESL_SC2" target="#">ESL SC2</a></td>
+				<td>
+                    <a href="https://twitch.tv/ESL_SC2" target="#"><span class="anchor">ESL SC2</span> <img class="logo" id="sc-logo" src=""/></a>
+                </td>
                 <td id="sc-status">Offline</td>
                 <td id="sc-game">n/a</td>
                 <td><img id="sc-preview" src=""/></td>
             </tr>
 			<tr>
-				<td><a href="https://twitch.tv/A_Seagull" target="#">A_Seagull</a></td>
+                <td><a href="https://twitch.tv/A_Seagull" target="#"><span class="anchor">A_Seagull</span> <img class="logo" id="seagull-logo"/></a></td>
 				<td id="seagull-status">Offline</td>
                 <td id="seagull-game">n/a</td>
                 <td><img id="seagull-preview" src=""/></td>
